@@ -5,9 +5,12 @@
   "RequiredApiVersion": "1.0.1",
   "Dependencies": [
     {
-      "UniqueName": "Nickel.Legacy",
-      "Version": "1.0.1",
-      "IsRequired": true
+        "UniqueName": "Nickel.Legacy",
+        "IsRequired": true
+    },
+    {
+        "UniqueName": "Shockah.Kokoro",
+        "IsRequired": true
     }
   ],
   "ModType": "Nickel.Legacy"
