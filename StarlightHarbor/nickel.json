@@ -1,0 +1,14 @@
+{
+  "EntryPointAssembly": "StarlightHarbor.dll",
+  "UniqueName": "starlight.harbor.muni",
+  "Version": "1.0.0",
+  "RequiredApiVersion": "1.0.1",
+  "Dependencies": [
+    {
+      "UniqueName": "Nickel.Legacy",
+      "Version": "1.0.1",
+      "IsRequired": true
+    }
+  ],
+  "ModType": "Nickel.Legacy"
+}

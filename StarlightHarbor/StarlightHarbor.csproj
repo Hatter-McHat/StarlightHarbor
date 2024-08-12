@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFramework>net8.0</TargetFramework>
+	<IsLegacyMod>True</IsLegacyMod>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <IsPublishable>True</IsPublishable>
+    <BaseOutputPath>C:\Projects\[Mod]StarlightHarbor\StarlightHarbor\</BaseOutputPath>
+    <BaseIntermediateOutputPath />
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+    <PackageOutputPath />
+	<EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+	<ModLoaderPath>..\..\[Mod]CC_Dependancies\Nickel</ModLoaderPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Deterministic>True</Deterministic>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Artifacts\ByteDrive.cs" />
+    <Compile Include="Artifacts\MuniStrike.cs" />
+    <Compile Include="Artifacts\MuniFractal.cs" />
+    <Compile Include="Artifacts\TineMine.cs" />
+    <Compile Include="Artifacts\LunaPrimer.cs" />
+    <Compile Include="Artifacts\JunoHeart.cs" />
+    <Compile Include="Artifacts\JunoPlating.cs" />
+    <Compile Include="Artifacts\HazeCore.cs" />
+    <Compile Include="Artifacts\LunaAmmo.cs" />
+    <Compile Include="Cards\IKokoroApi.cs" />
+    <Compile Include="Cards\LunaCasingsCard.cs" />
+    <Compile Include="Cards\MuniADoubler.cs" />
+    <Compile Include="Mod\ModEntry.cs" />
+    <Compile Include="Ships\Byte.cs" />
+    <Compile Include="Ships\Muni.cs" />
+    <Compile Include="Ships\Tine.cs" />
+    <Compile Include="Ships\Juno.cs" />
+    <Compile Include="Ships\Haze.cs" />
+    <Compile Include="Ships\Luna.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Nickel.ModBuildConfig" Version="1.2.0" />
+	</ItemGroup>
+	
+  <ItemGroup>
+    <Reference Include="CobaltCore">
+      <HintPath>..\..\[Mod]CC_Dependancies\CobaltCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CobaltCoreModding.Definitions">
+      <HintPath>..\..\[Mod]CC_Dependancies\Nickel\ModLibrary\Nickel.Legacy\CobaltCoreModding.Definitions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kokoro">
+      <HintPath>..\..\[Mod]CC_Dependancies\Kokoro\Kokoro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
