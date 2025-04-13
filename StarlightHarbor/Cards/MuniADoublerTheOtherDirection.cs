@@ -13,11 +13,13 @@ using static System.Collections.Specialized.BitVector32;
 namespace StarlightHarbor.Cards
 {
     //from Soggins by Shockah
-    internal class MuniADoubler : CardAction
+    internal class MuniADoublerTheOtherDirection : CardAction
     {
         public int uuid;
         public Card backupCard;
+        //private List<CardAction> actions = new List<CardAction>();
         private static StarlightHarbor.Mod.ModEntry Instance => StarlightHarbor.Mod.ModEntry.Instance;
+        //internal IKokoroApi KokoroApi { get; private set; } = null!;
 
         public override void Begin(G g, State state, Combat combat)
         {           
@@ -26,11 +28,13 @@ namespace StarlightHarbor.Cards
             Card card = state.FindCard(this.uuid) ?? this.backupCard;
             var toAdd = card.GetActionsOverridden(state, combat)
                         .Where(a => a is not AEndTurn)
-                        .ToList();          
-            var isSpawnAction = toAdd.SelectMany(a => Instance.KokoroApi.Actions.GetWrappedCardActionsRecursively(a)).Any(a => a is ASpawn);
-            if (isSpawnAction) {
-                toAdd.Add(new ADroneMove { dir = 1 });
-                combat.Queue(new ADroneMove { dir = -1 });
+                        .ToList();
+            
+                var isSpawnAction = toAdd.SelectMany(a => Instance.KokoroApi.Actions.GetWrappedCardActionsRecursively(a)).Any(a => a is ASpawn);
+            if (isSpawnAction)
+            {
+                toAdd.Add(new ADroneMove { dir = -1 });
+                combat.Queue(new ADroneMove { dir = 1 });
             }
             actions.InsertRange(0, toAdd);
             foreach (CardAction action in actions) {

@@ -5,11 +5,11 @@ namespace StarlightHarbor.Artifacts
     [ArtifactMeta(owner = Deck.colorless, pools = new ArtifactPool[] { ArtifactPool.EventOnly }, unremovable = true)]
     internal class JunoPlating : Artifact
     {
-       
+
         //limit max evade to two, add card offerings
-        private const int maxEvadeLimit = 2;
-        private const int healthBoost = 3;
-        public override string Description() => "<c=downside>You can no longer have more than 2 <c=status>EVADE</c> at a time, shield reduces by 1 at start of turn</c> +3 max hp gained from killing bosses";
+        public const int maxEvadeLimit = 2;
+        public const int healthBoost = 3;
+        public override string Description() => "";
 
         public override void OnRemoveArtifact(State state)
         {
@@ -39,6 +39,24 @@ namespace StarlightHarbor.Artifacts
                 a.artifactPulse = this.Key();
                 combat.QueueImmediate((CardAction)a);
             }
+        }
+        public override List<Tooltip>? GetExtraTooltips()
+        {
+            return new List<Tooltip>()
+            {
+                {
+                    (Tooltip)new TTGlossary("status.evade", new object[1]
+                    {
+                      (object) "1"
+                    })
+                },
+                {
+                    (Tooltip)new TTGlossary("status.shield", new object[1]
+                    {
+                      (object) "1"
+                    })
+                }
+            };
         }
 
     }

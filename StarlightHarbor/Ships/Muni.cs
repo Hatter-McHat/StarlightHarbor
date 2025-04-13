@@ -112,7 +112,7 @@ namespace StarlightHarbor.Ships
 
         public void LoadManifest(IArtifactRegistry registry)
         {
-            this.addArtifact("MUNI FRACTAL", "muni_fractal", "The first 2 cards you play each turn do their actions twice. <c=downside>Gain 1 less <c=ENERGY</c> every turn.</c>", typeof(MuniFractal), registry);
+            this.addArtifact("MUNI FRACTAL", "muni_fractal", "The first 2 cards you play each turn do their actions twice. <c=midrow>Midrow</c> objects doubled are shunted to the side. <c=downside>Gain 1 less <c=energy>ENERGY</c> every turn.</c>", typeof(MuniFractal), registry);
             this.addArtifact("MUNI STRIKE", "muni_strike", "<c=downside>Draw 3 less cards per turn.</c> When you play your first card each turn, repeat its actions an additional time and draw 3 cards", typeof(MuniStrike), registry);
         }
 
@@ -149,11 +149,13 @@ namespace StarlightHarbor.Ships
             {
                //change from 0 to 1 when uncommenting
                Muni.artifacts["MUNI FRACTAL"]
-            }, (IEnumerable<Type>)new Type[3]
+            }, (IEnumerable<Type>)new Type[4]
             {
                 typeof (DodgeColorless),
-                typeof (BasicShieldColorless),
-                typeof (CannonColorless)
+                typeof (CannonColorless),           
+                typeof (CannonColorless),
+                typeof (BasicShieldColorless)
+
             }, (IEnumerable<Type>)new Type[1]
             {
                 new ShieldPrep().GetType()

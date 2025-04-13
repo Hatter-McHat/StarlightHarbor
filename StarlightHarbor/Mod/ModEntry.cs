@@ -9,6 +9,7 @@ using CobaltCoreModding.Definitions;
 using Shockah.Kokoro;
 using CobaltCoreModding.Definitions.ModContactPoints;
 using Microsoft.Extensions.Logging;
+using HarmonyLib;
 
 namespace StarlightHarbor.Mod
 {
@@ -25,6 +26,7 @@ namespace StarlightHarbor.Mod
         public string Name { get; init; } = typeof(ModEntry).Namespace!;
         internal static ModEntry Instance { get; private set; } = null!;
         internal IKokoroApi KokoroApi { get; private set; } = null!;
+        //internal Harmony Harmony;
         public void BootMod(IModLoaderContact contact)
         {
             Instance = this;

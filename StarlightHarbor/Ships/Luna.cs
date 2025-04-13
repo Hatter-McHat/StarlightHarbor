@@ -159,12 +159,13 @@ namespace StarlightHarbor.Ships
             {
                 //change from 0 to 1 when uncommenting
                 Luna.artifacts["LUNA AMMOFEED"]
-            }, (IEnumerable<Type>)new Type[1]
+            }, (IEnumerable<Type>)new Type[2]
             {
                 //upgrade to A, handled by artifact
                 //typeof (DodgeColorless),
                 //typeof (CannonColorless),
-                typeof (BasicShieldColorless)
+                typeof (BasicShieldColorless),
+                typeof (CannonColorless)
             }, (IEnumerable<Type>)new Type[1]
             {
                 new ShieldPrep().GetType()

@@ -23,8 +23,17 @@
                 fumecount -= 4;
             }
         }
-
         public override void OnCombatEnd(State state) => this.fumecount = 0;
+        public override List<Tooltip>? GetExtraTooltips()
+        {
+            return new List<Tooltip>()
+            {
+              (Tooltip) new TTCard()
+              {
+                card = (Card) new TrashFumes()
+              }
+            };
+        }
 
     }
 }

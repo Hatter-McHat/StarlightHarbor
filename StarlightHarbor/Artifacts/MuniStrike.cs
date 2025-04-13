@@ -6,8 +6,8 @@ namespace StarlightHarbor.Artifacts
     [ArtifactMeta(owner = Deck.colorless, pools = new ArtifactPool[] { ArtifactPool.Boss }, unremovable = true)]
     internal class MuniStrike : Artifact
     {
-        private const int drawPenalty = 3;
-        private bool activated = false;
+        public const int drawPenalty = 3;
+        public bool activated = false;
 
         public override string Description() => "Draw 3 less cards per turn, on first card play card an additional time and draw 3 cards";
 
