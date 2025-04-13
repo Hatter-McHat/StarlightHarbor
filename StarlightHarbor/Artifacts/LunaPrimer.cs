@@ -7,8 +7,8 @@ namespace StarlightHarbor.Artifacts
     internal class LunaPrimer: Artifact
     {
 
-        private int casingsSpent = 0;
-        private int casingsLimit = 5;
+        public int casingsSpent = 0;
+        public int casingsLimit = 5;
         //private bool casingRefund = true;
         public override string Description() => "";
         public override int? GetDisplayNumber(State s) => casingsSpent;

@@ -90,7 +90,6 @@ namespace StarlightHarbor.Ships
             this.addSprite("tine_cannon", artRegistry);
             this.addSprite("tine_launcher", artRegistry);
             this.addSprite("tine_wing", artRegistry);
-            this.addSprite("tine_wing_b", artRegistry);
             this.addSprite("tine_structure", artRegistry);
             //non-part
             this.addSprite("tine_chassis", artRegistry);
@@ -102,10 +101,11 @@ namespace StarlightHarbor.Ships
         {
             //add parts here, flip boolean
             //oh boy, different naming conventions
+            //structure changed to be actually hitable. 
             this.addPart("wing0", "tine_wing", (PType)3, false, 0, registry);
             this.addPart("launcher", "tine_launcher", (PType)2, false, 0, registry);
             this.addPart("cannon", "tine_cannon", (PType)1, false, 0, registry);
-            this.addPart("structure", "tine_structure", (PType)4, false, 0, registry);
+            this.addPart("structure", "tine_structure", (PType)3, false, (PDamMod)2, registry);
             this.addPart("cockpit", "tine_cockpit", (PType)0, false, 0, registry);
             this.addPart("wing1", "tine_wing", (PType)3, true, 0, registry);
         }
@@ -148,14 +148,14 @@ namespace StarlightHarbor.Ships
             {
                //change from 0 to 1 when uncommenting
                Tine.artifacts["TINE MINE"]
-            }, (IEnumerable<Type>)new Type[3]
+            }, (IEnumerable<Type>)new Type[4]
             {
                 typeof (DodgeColorless),
+                typeof (CannonColorless),
                 typeof (BasicShieldColorless),
-                typeof (DroneshiftColorless)
-            }, (IEnumerable<Type>)new Type[2]
+                typeof (DroneshiftColorless),
+            }, (IEnumerable<Type>)new Type[1]
             {
-                new ArmoredBay().GetType(),
                 new ShieldPrep().GetType()
             });
             starterShip.AddLocalisation(nameof(Tine), "Prickly.\nConstantly launches mines, be careful!");

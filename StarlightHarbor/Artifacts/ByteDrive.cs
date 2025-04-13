@@ -5,8 +5,8 @@ namespace StarlightHarbor.Artifacts
     [ArtifactMeta(owner = Deck.colorless, pools = new ArtifactPool[] { ArtifactPool.EventOnly }, unremovable = true)]
     internal class ByteDrive : Artifact
     {
-        private const int combatLimit = 3;
-        private int combatCount = 0;
+        public const int combatLimit = 3;
+        public int combatCount = 0;
         public override int? GetDisplayNumber(State s) => new int?(combatCount);
         public override void OnCombatEnd(State state)
         {
@@ -26,6 +26,23 @@ namespace StarlightHarbor.Artifacts
             }
             
         }
-        
+        public override List<Tooltip>? GetExtraTooltips() 
+        //Corrupted Core, temporary
+        {
+            return new List<Tooltip>()
+            {
+              (Tooltip) new TTCard()
+              {
+                card = (Card) new CorruptedCore()
+              },
+              {
+                (Tooltip) new TTGlossary("cardtrait.temporary", new object[1]
+                  {
+                    (object) "1"
+                  })
+              }
+            };
+        }
+
     }
 }

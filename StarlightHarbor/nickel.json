@@ -1,7 +1,7 @@
 {
   "EntryPointAssembly": "StarlightHarbor.dll",
   "UniqueName": "starlight.harbor.muni",
-  "Version": "1.0.0",
+  "Version": "0.2.8",
   "RequiredApiVersion": "1.0.1",
   "Dependencies": [
     {

@@ -110,17 +110,17 @@ namespace StarlightHarbor.Ships
             this.addPart("structure0", "juno_structure", (PType)4, false, 0, registry);
             this.addPart("wing1", "juno_wing_a", (PType)3, false, (PDamMod) 2, registry);
             this.addPart("cockpit", "juno_cockpit", (PType)0, false, 0, registry);
-            this.addPart("wing2", "juno_wing_a", (PType)3, false, (PDamMod) 2, registry);
-            this.addPart("structure1", "juno_structure", (PType)4, false, 0, registry);
-            this.addPart("cannon1", "juno_cannon", (PType)1, false, 0, registry);
-            this.addPart("launcher1", "juno_launcher", (PType)2, false, 0, registry);
-            this.addPart("wing3", "juno_wing_b", (PType)3, false, (PDamMod) 2, registry);
+            this.addPart("wing2", "juno_wing_a", (PType)3, true, (PDamMod) 2, registry);
+            this.addPart("structure1", "juno_structure", (PType)4, true, 0, registry);
+            this.addPart("cannon1", "juno_cannon", (PType)1, true, 0, registry);
+            this.addPart("launcher1", "juno_launcher", (PType)2, true, 0, registry);
+            this.addPart("wing3", "juno_wing_b", (PType)3, true, (PDamMod) 2, registry);
 
         }
 
         public void LoadManifest(IArtifactRegistry registry)
         {
-            this.addArtifact("JUNO HEAVY SHIELD", "juno_plating", " Gain <c=keyword>3</c> more <c=healing>hull</c> and <c=hull>max hull</c> when you defeat a boss. <c=downside>You can not have more than 2 <c=status>EVADE</c> at a time. At the start of each turn, lose 1 <c=status>SHIELD</c>.</c>", typeof(JunoPlating), registry);
+            this.addArtifact("JUNO HEAVY SHIELD", "juno_plating", "Gain <c=keyword>3</c> more <c=healing>hull</c> and <c=hull>max hull</c> when you defeat a boss. <c=downside>You can not have more than 2 <c=status>EVADE</c> at a time. At the start of each turn, lose 1 <c=status>SHIELD</c>.</c>", typeof(JunoPlating), registry);
             this.addArtifact("JUNO REACTOR", "juno_heart", "Every 4 times being hit, gain 1 <c=energy>ENERGY.</c>", typeof(JunoHeart), registry);
         }
 
@@ -161,11 +161,12 @@ namespace StarlightHarbor.Ships
             {
                //change from 0 to 1 when uncommenting
                Juno.artifacts["JUNO HEAVY SHIELD"]
-            }, (IEnumerable<Type>)new Type[3]
+            }, (IEnumerable<Type>)new Type[4]
             {
                 typeof (DodgeColorless),
+                typeof (CannonColorless),
+                typeof (CannonColorless),
                 typeof (BasicShieldColorless),
-                typeof (CannonColorless)
             }, (IEnumerable<Type>)new Type[1]
             {
                 new ShieldPrep().GetType()

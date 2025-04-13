@@ -5,9 +5,9 @@ namespace StarlightHarbor.Artifacts
     [ArtifactMeta(owner = Deck.colorless, pools = new ArtifactPool[] { ArtifactPool.Boss }, unremovable = true)]
     internal class JunoHeart : Artifact
     {
-        private const int hitLimit = 4;
-        private int hitsTaken = 0;
-        private int energyGain = 0;
+        public const int hitLimit = 4;
+        public int hitsTaken = 0;
+        public int energyGain = 0;
         //this description isn't used
         public override int? GetDisplayNumber(State s) => new int?(hitsTaken);
         public override string Description() => "";

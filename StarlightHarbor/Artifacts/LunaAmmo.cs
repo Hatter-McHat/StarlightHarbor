@@ -40,7 +40,7 @@ namespace StarlightHarbor.Artifacts
             AEnergy a = new AEnergy();
             a.changeAmount = 1;
             a.artifactPulse = this.Key();
-            combat.QueueImmediate((CardAction)a);
+            combat.Queue((CardAction)a);
         }
         public override void OnPlayerAttack(State state, Combat combat)
         {

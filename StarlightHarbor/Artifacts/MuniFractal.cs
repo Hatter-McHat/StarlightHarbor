@@ -6,8 +6,8 @@ namespace StarlightHarbor.Artifacts
     [ArtifactMeta(owner = Deck.colorless, pools = new ArtifactPool[] { ArtifactPool.EventOnly }, unremovable = true)]
     internal class MuniFractal : Artifact
     {
-        private const int usesPerTurn = 2;
-        private int uses = 0;
+        public const int usesPerTurn = 2;
+        public int uses = 0;
 
         public override string Description() => "";
         public override int? GetDisplayNumber(State s) => new int?(usesPerTurn - uses);
@@ -45,6 +45,5 @@ namespace StarlightHarbor.Artifacts
         {
             state.ship.baseEnergy++;
         }
-
     }
 }

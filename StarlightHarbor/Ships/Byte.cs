@@ -160,10 +160,11 @@ namespace StarlightHarbor.Ships
             {
                 //change from 0 to 1 when uncommenting
                 Byte.artifacts["BYTE DRIVE"]
-            }, (IEnumerable<Type>)new Type[4]
+            }, (IEnumerable<Type>)new Type[5]
             {
                 //upgrade to A, handled by artifact
                 typeof (DodgeColorless),
+                typeof (CannonColorless),
                 typeof (CannonColorless),
                 typeof (BasicShieldColorless),
                 typeof (ColorlessCATSummon)

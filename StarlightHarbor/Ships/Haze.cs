@@ -116,7 +116,7 @@ namespace StarlightHarbor.Ships
         public void LoadManifest(IArtifactRegistry registry)
         {   
             //problem child
-            this.addArtifact("HAZE CORE", "haze_core", "<c=downside>For every 4 objects you <c=midrow>LAUNCH</c>, add 2 <c=card>Fumes</c> to your discard pile.</c>", typeof(HazeCore), registry);
+            this.addArtifact("HAZE CORE", "haze_core", "<c=downside>For every 4 objects you <c=midrow>launch</c>, add 2 <c=card>Fumes</c> to your discard pile.</c>", typeof(HazeCore), registry);
         }
         public void LoadManifest(IShipRegistry shipRegistry)
         {
@@ -154,9 +154,10 @@ namespace StarlightHarbor.Ships
             ExternalStarterShip starterShip = new ExternalStarterShip("starlight.harbor.hazeStarter", this.haze.GlobalName, (IEnumerable<ExternalCard>)new ExternalCard[0], (IEnumerable<ExternalArtifact>)new ExternalArtifact[1]
             {
                 Haze.artifacts["HAZE CORE"]
-            }, (IEnumerable<Type>)new Type[3]
+            }, (IEnumerable<Type>)new Type[4]
             {
                 typeof (DodgeColorless),
+                typeof (CannonColorless),
                 typeof (CannonColorless),
                 typeof (BasicShieldColorless)
             }, (IEnumerable<Type>)new Type[1]
